@@ -1,0 +1,14 @@
+
+Hope you enjoy your new logo, here are the people that
+made your beautiful logo happen :)
+font name: amita-regular
+font link: https://fonts.google.com/specimen/Amita
+font author: Eduardo Tunni
+font author site: http://www.tipo.net.ar/
+Slogan Font: KaushanScript-Regular.ttf
+
+icon designer: Krisada
+icon designer link: /Krisada
+        
+{"bg":"#F56B11","icon":"#FFFFFF","font":"#ffffff","slogan":"#ffffff"}
+      

@@ -16,33 +16,12 @@
                   
                         <v-list-item-subtitle >Rs.{{item.price}}/- 
                         </v-list-item-subtitle>
-                    <Counter/>
+                    <Counter :count="0" @product-count="updateQuantity"/> 
+                    <span>{{ quantity }}</span>
                 </v-list-item-content>
             </v-list-item>
-        </template>
-        
+        </template>      
     </v-list>
-    <!-- <div>
-        <div class="row food-item">
-            
-            <div>
-                <ul style="list-style-type:none">
-                    <li v-for="(item, $index) in foodItems" :key="$index">
-                        <div>
-                            <img :src= "item.image" alt="food-pic"></div>
-                            <div class="title"><strong>{{item.title}} </strong> </div>
-                            <div class="description"><em>{{item.description}} </em></div>
-                            <div class="price">Rs.{{item.price}}/-</div>
-                        <Counter/>
-                    </li>
-                </ul>
-                
-            </div>
-
-            
-        </div>
-        
-    </div> -->
 </template>
 
 <script>
@@ -66,14 +45,20 @@ export default {
                     'description': 'Aromatic basmati rice tossed in some spices and egg',
                     'price': 150,   
                     },
-                    {
-                    'title': 'Prawns Biryani',
-                    'description': 'Aromatic basmati rice tossed in some spices and prawns',
-                    'price': 170,   
-                    },
+                    // {
+                    // 'title': 'Prawns Biryani',
+                    // 'description': 'Aromatic basmati rice tossed in some spices and prawns',
+                    // 'price': 170,   
+                    // },
                 ],
+            quantity: 0,
         }
-    }
+    },
+    methods: {
+        updateQuantity: function(quantity){
+        this.quantity = quantity;
+        },
+    },
     
 }
 </script>

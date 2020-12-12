@@ -3,7 +3,7 @@
         <v-btn dark 
             small 
             color="#ff6f3c" 
-            v-if="this.count===0" 
+            v-if="this.counter===0" 
             @click="increase">
             <v-icon dense xSmall>
             Add to Cart
@@ -17,8 +17,8 @@
                     mdi-minus
                  </v-icon>
             </v-btn>
-            {{count}}
-            <v-btn :disabled="this.count>=10"
+            {{counter}}
+            <v-btn :disabled="this.counter>=10"
                  @click="increase" 
                  color="orange" 
                  class="mx-2"
@@ -28,25 +28,19 @@
                     mdi-plus
                  </v-icon>
             </v-btn>
-
-            <!-- <button @click="decrease">-</button>
-                {{ count }}
-            <button :disabled="isActive" @click="increase">+</button> -->
         </div>
         
     </div>
+    
 </template>
 
 <script>
 export default {
     name: 'Counter',
-    props: {
-        msg: String
-
-    },
+    props: ['count'],
     data: function() {
         return{
-            count:0,
+            counter:this.count,
         }
         
     },
@@ -54,10 +48,14 @@ export default {
     methods: {
 
         increase: function(){
-            this.count++;
+            this.counter++;
+            this.$emit('product-count', this.counter);
+           
+            
         },
         decrease: function(){
-            this.count--;
+            this.counter--;
+            this.$emit('product-count', this.counter);
             
         }
     }

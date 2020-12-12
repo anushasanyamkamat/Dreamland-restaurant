@@ -16,11 +16,14 @@
                   
                         <v-list-item-subtitle >Rs.{{item.price}}/- 
                         </v-list-item-subtitle>
-                    <Counter :count="0" @product-count="updateQuantity"/> 
-                    <span>{{ quantity }}</span>
+                    <Counter :count="item.quantity" 
+                        @product-count="updateQuantity(item, $event)"/> 
+                    <!-- {{item.quantity}} -->
                 </v-list-item-content>
-            </v-list-item>
-        </template>      
+            </v-list-item> 
+        </template>  
+        <span>{{ totalQuantity }}</span>   <br> 
+        <span>{{ totalPrice }}</span>    
     </v-list>
 </template>
 
@@ -37,13 +40,15 @@ export default {
                     {    
                     'title': 'Veg Biryani',
                     'description': 'Aromatic basmati rice tossed in some spices and vegetables',
-                    'price': 120,
+                    'price': 100,
+                    'quantity': 0,
                     image:'./assets/veg-biryani.png'
                     },
                     {
                     'title': 'Egg Biryani',
                     'description': 'Aromatic basmati rice tossed in some spices and egg',
-                    'price': 150,   
+                    'price': 200, 
+                    'quantity': 0, 
                     },
                     // {
                     // 'title': 'Prawns Biryani',
@@ -51,12 +56,26 @@ export default {
                     // 'price': 170,   
                     // },
                 ],
-            quantity: 0,
+            
         }
     },
     methods: {
-        updateQuantity: function(quantity){
-        this.quantity = quantity;
+        updateQuantity: function(item,quantity){
+        console.log(item,quantity);
+        item.quantity = quantity;
+        
+        },
+    },
+    computed: {
+        totalQuantity: function(){
+            return this.foodItems.reduce(function(total, item){
+                return total + item.quantity;
+            },0);
+        },
+        totalPrice: function(){
+            return this.foodItems.reduce(function(total, item){
+                return total + (item.quantity * item.price);
+            },0);
         },
     },
     

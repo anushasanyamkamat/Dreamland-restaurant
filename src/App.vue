@@ -1,23 +1,21 @@
 <template>
   <v-app>
-    <v-main>
-      <HotelMenu/>
-    </v-main>
+    <router-view></router-view>
   </v-app>
 </template>
 
 <script>
-import HotelMenu from './components/HotelMenu';
+
 
 export default {
   name: 'App',
-
-  components: {
-    HotelMenu,
-  },
+  // components: {
+  //   HotelMenu,
+  // },
 
   data: () => ({
     //
   }),
 };
 </script>
+

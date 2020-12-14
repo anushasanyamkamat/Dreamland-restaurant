@@ -1,5 +1,4 @@
 <template>
-
     <v-list three-line>
         <template v-for="(item, $index) in foodItems">
             <v-list-item  :key="$index">
@@ -8,17 +7,16 @@
                     </v-img>
                 </v-list-item-avatar>
                 <v-list-item-content>
-                    <v-col> 
-                        <v-list-item-title v-text="item.title"></v-list-item-title>
+                    <v-col>
+                    <v-list-item-title v-text="item.title"></v-list-item-title>
                     </v-col>
-                        <v-list-item-subtitle v-text="item.description">
-                        </v-list-item-subtitle>
-                  
-                        <v-list-item-subtitle >Rs.{{item.price}}/- 
-                        </v-list-item-subtitle>
+                    <v-list-item-subtitle v-text="item.description"></v-list-item-subtitle>
+                    <v-col>
+                    <v-list-item-subtitle >Rs.{{item.price}}/- </v-list-item-subtitle>
+                    </v-col>
                     <Counter :count="item.quantity" 
-                        @product-count="updateQuantity(item, $event)"/> 
-                    <!-- {{item.quantity}} -->
+                             @product-count="updateQuantity(item, $event)"/> 
+            
                 </v-list-item-content>
             </v-list-item> 
         </template>  
@@ -49,7 +47,7 @@
                 class="my-2"
                 >
                 Place your Order
-                <!-- <a style="text-decoration: none" href="#">Place your Order</a> -->
+            
                 </v-btn>
                 <v-icon
                     large
@@ -84,11 +82,12 @@ export default {
                     'price': 200, 
                     'quantity': 0, 
                     },
-                    // {
-                    // 'title': 'Prawns Biryani',
-                    // 'description': 'Aromatic basmati rice tossed in some spices and prawns',
-                    // 'price': 170,   
-                    // },
+                    {
+                    'title': 'Prawns Biryani',
+                    'description': 'Aromatic basmati rice tossed in some spices and prawns',
+                    'price': 170,   
+                    'quantity': 0,
+                    },
                 ],
             
         }

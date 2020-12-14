@@ -22,8 +22,42 @@
                 </v-list-item-content>
             </v-list-item> 
         </template>  
-        <span>{{ totalQuantity }}</span>   <br> 
-        <span>{{ totalPrice }}</span>    
+ 
+        <v-container class="grey lighten-5">
+            <v-row no-gutters>
+                <v-col>
+                    Total Price :-
+                </v-col>
+                <v-col> Rs.{{ totalPrice }}/-
+                </v-col>
+            </v-row>
+        </v-container>
+
+        <v-footer
+            color="orange"
+            padless
+            >
+            <v-row
+                justify="end"
+                no-gutters
+                
+            >
+                <v-btn
+                color="black"
+                text
+                rounded
+                class="my-2"
+                >
+                Place your Order
+                <!-- <a style="text-decoration: none" href="#">Place your Order</a> -->
+                </v-btn>
+                <v-icon
+                    large
+                    >
+                    mdi-chevron-right
+                </v-icon>
+            </v-row>
+        </v-footer>
     </v-list>
 </template>
 

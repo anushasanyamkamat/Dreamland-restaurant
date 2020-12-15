@@ -45,6 +45,7 @@
                 text
                 rounded
                 class="my-2"
+                @click="cartItems"
                 >
                 Place your Order
             
@@ -89,14 +90,20 @@ export default {
                     'quantity': 0,
                     },
                 ],
+                // foodCartItems: [{}],
             
         }
     },
     methods: {
         updateQuantity: function(item,quantity){
         console.log(item,quantity);
-        item.quantity = quantity;
-        
+        item.quantity = quantity; 
+        },
+
+        cartItems: function(){
+          console.log(this.foodItems);
+          localStorage.setItem('foodItems', JSON.stringify(this.foodItems));
+          this.$router.push('/food-cart');
         },
     },
     computed: {

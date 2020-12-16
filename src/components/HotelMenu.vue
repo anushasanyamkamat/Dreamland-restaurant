@@ -90,19 +90,25 @@ export default {
                     'quantity': 0,
                     },
                 ],
-                // foodCartItems: [{}],
+                
             
         }
+    },
+    created(){
+        if((localStorage.getItem('foodItems'))!=null){
+            this.foodItems= JSON.parse(localStorage.getItem('foodItems'));
+        }
+        
     },
     methods: {
         updateQuantity: function(item,quantity){
         console.log(item,quantity);
         item.quantity = quantity; 
+        localStorage.setItem('foodItems', JSON.stringify(this.foodItems));
         },
 
         cartItems: function(){
           console.log(this.foodItems);
-          localStorage.setItem('foodItems', JSON.stringify(this.foodItems));
           this.$router.push('/food-cart');
         },
     },

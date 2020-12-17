@@ -51,8 +51,7 @@
             
                 </v-btn>
                 <v-icon
-                    large
-                    >
+                    large>
                     mdi-chevron-right
                 </v-icon>
             </v-row>

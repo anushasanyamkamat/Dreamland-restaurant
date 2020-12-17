@@ -10,13 +10,19 @@
                         color="orange"
                         dark>
                             <v-icon
-                                large>
+                                large color="black">
                                 mdi-chevron-left
                             </v-icon>
-                        <v-toolbar-title>
-                            <router-link :to="{ path: '/' }">Back to Menu</router-link>
-                        </v-toolbar-title>
-                        <v-spacer></v-spacer>
+             
+                            <v-btn
+                                color="black"
+                                text
+                                rounded
+                                class="my-2"
+                                @click="backToMenu">
+                                Back To Menu
+                            </v-btn>      
+                        
                     </v-toolbar>
                 </v-card>
             </v-col>
@@ -62,11 +68,12 @@
                     color="black"
                     text
                     rounded
-                    class="my-2">
+                    class="my-2"
+                    @click="checkout">
                     Proceed to checkout
                 </v-btn>
                 <v-icon
-                    large>
+                    large color="black">
                     mdi-chevron-right
                 </v-icon>
             </v-row>
@@ -110,6 +117,12 @@
             item.quantity = quantity; 
             localStorage.setItem('foodItems', JSON.stringify(this.foodCartItems));
             
+            },
+            backToMenu: function(){
+                this.$router.push('/');
+            },
+            checkout: function(){
+                this.$router.push('contact-info');
             },
         },
     }

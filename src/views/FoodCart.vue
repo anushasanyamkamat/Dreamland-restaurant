@@ -47,36 +47,39 @@
                 </v-list-item-content>
             </v-list-item> 
         </template>  
- 
-        <v-container class="grey lighten-5">
-            <v-row no-gutters>
-                <v-col>
-                    Total Price :-
-                </v-col>
-                <v-col> Rs.{{ totalPrice }}/-
-                </v-col>
-            </v-row>
-        </v-container>
-
-        <v-footer
-            color="orange"
-            padless>
-            <v-row
+        <v-footer 
+            padless
+            fixed
+            >
+                <v-container>
+                     <hr>
+                    <v-row>
+                        <v-col align-self="center">
+                            Total Price :-
+                        </v-col>
+                        <v-col justify="end"> Rs.{{ totalPrice }}/-
+                        </v-col>
+                    </v-row>
+                </v-container>
+                
+                <v-row
                 justify="end"
-                no-gutters >
-                <v-btn
-                    color="black"
-                    text
-                    rounded
-                    class="my-2"
-                    @click="checkout">
-                    Proceed to checkout
-                </v-btn>
-                <v-icon
-                    large color="black">
-                    mdi-chevron-right
-                </v-icon>
-            </v-row>
+                no-gutters 
+                color="orange">
+                    <v-btn
+                        color="black"
+                        text
+                        rounded
+                        class="my-2"
+                        @click="checkout">
+                        Proceed to checkout
+                    </v-btn>
+                    <v-icon
+                        large color="black">
+                        mdi-chevron-right
+                    </v-icon>
+                </v-row>
+            
         </v-footer>
     </v-list>
 </template>
@@ -116,6 +119,7 @@
             console.log(item,quantity);
             item.quantity = quantity; 
             localStorage.setItem('foodItems', JSON.stringify(this.foodCartItems));
+            localStorage.setItem('totalPrice', JSON.stringify(this.totalPrice));
             
             },
             backToMenu: function(){

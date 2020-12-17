@@ -61,6 +61,17 @@
                 </v-col>
             </v-row>
         </v-container>
+        <v-footer 
+            fixed
+            justify="center">
+            <v-row no-gutters>
+                <v-col>
+                    Total Price :-
+                </v-col>
+                <v-col> Rs.{{ totalPrice }}/-
+                </v-col>
+            </v-row>
+        </v-footer>
     
     </div>
     
@@ -80,7 +91,11 @@ export default {
             phoneRules: [
                         value => (value && value.length == 10 )|| 'Please Enter 10 digit phone no.'
             ],
+            totalPrice: 0,
         }
+    },
+    created(){
+            this.totalPrice = JSON.parse(localStorage.getItem('totalPrice'));
     },
     methods: {
         backToCart: function(){

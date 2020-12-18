@@ -115,8 +115,10 @@ export default {
         }
     },
     created(){
-                this.totalPrice = JSON.parse(localStorage.getItem('totalPrice'));
-            
+                this.totalPrice = localStorage.getItem('totalPrice');
+                this.name = localStorage.getItem('name');
+                this.address = localStorage.getItem('address');
+                this.phone = localStorage.getItem('phone');
     },
     
     methods: {
@@ -124,7 +126,7 @@ export default {
             this.$router.push('/food-cart');
         },
         saveDetails: function(){
-            if(this.totalPrice!=null){
+            if(this.totalPrice){
                 localStorage.setItem('name',this.name);
                 localStorage.setItem('address', this.address);
                 localStorage.setItem('phone', this.phone);
@@ -135,5 +137,6 @@ export default {
             
         },
     },
+
 }
 </script>

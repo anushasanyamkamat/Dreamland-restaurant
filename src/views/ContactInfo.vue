@@ -34,7 +34,8 @@
                     <v-text-field
                         label="Full Name"
                         hide-details="auto"
-                        :rules="nameRules">
+                        :rules="nameRules"
+                        v-model="name">
                     </v-text-field>
                 </v-col>
             </v-row>
@@ -45,7 +46,8 @@
                         label="Address (In Margao area only)"
                         hide-details="auto"
                         :rules="addressRules"
-                        required>
+                        required
+                        v-model="address">
                     </v-textarea>
                 </v-col>
             </v-row>
@@ -56,7 +58,7 @@
                         prefix="+91"
                         hide-details="auto"
                         :rules="phoneRules"
-                        required>
+                        v-model="phone">
                     </v-text-field>
                 </v-col>
             </v-row>
@@ -64,14 +66,29 @@
         <v-footer 
             fixed
             justify="center">
+            <v-container>
             <v-row no-gutters>
                 <v-col>
                     Total Price :-
                 </v-col>
-                <v-col> Rs.{{ totalPrice }}/-
+                <v-col> 
+                    <v-row justify="center"> 
+                        Rs.{{ totalPrice }}/-
+                    </v-row>
                 </v-col>
             </v-row>
+            </v-container>
+            <v-container>
+                <v-row justify="end">
+                    <v-btn 
+                    color="orange"
+                    @click="saveDetails">
+                        Proceed
+                    </v-btn>
+                </v-row>
+            </v-container>
         </v-footer>
+        
     
     </div>
     
@@ -91,16 +108,32 @@ export default {
             phoneRules: [
                         value => (value && value.length == 10 )|| 'Please Enter 10 digit phone no.'
             ],
-            totalPrice: 0,
+            totalPrice: null,
+            name: '',
+            address: '',
+            phone: null,
         }
     },
     created(){
-            this.totalPrice = JSON.parse(localStorage.getItem('totalPrice'));
+                this.totalPrice = JSON.parse(localStorage.getItem('totalPrice'));
+            
     },
+    
     methods: {
         backToCart: function(){
             this.$router.push('/food-cart');
-        }
-    }
+        },
+        saveDetails: function(){
+            if(this.totalPrice!=null){
+                localStorage.setItem('name',this.name);
+                localStorage.setItem('address', this.address);
+                localStorage.setItem('phone', this.phone);
+            }
+            else {
+                alert("Your Cart is empty");
+            }
+            
+        },
+    },
 }
 </script>

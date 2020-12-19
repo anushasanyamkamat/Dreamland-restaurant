@@ -104,7 +104,7 @@ export default {
         console.log(item,quantity);
         item.quantity = quantity; 
         localStorage.setItem('foodItems', JSON.stringify(this.foodItems));
-        localStorage.setItem('totalPrice', JSON.stringify(this.totalPrice));
+        
         },
 
         cartItems: function(){

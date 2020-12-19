@@ -119,7 +119,7 @@
             console.log(item,quantity);
             item.quantity = quantity; 
             localStorage.setItem('foodItems', JSON.stringify(this.foodCartItems));
-            localStorage.setItem('totalPrice', JSON.stringify(this.totalPrice));
+            
             
             },
             backToMenu: function(){
@@ -127,6 +127,7 @@
             },
             checkout: function(){
                 this.$router.push('contact-info');
+                localStorage.setItem('totalPrice', JSON.stringify(this.totalPrice));
             },
         },
     }

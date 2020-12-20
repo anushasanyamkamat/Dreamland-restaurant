@@ -4,6 +4,7 @@ import VueRouter from 'vue-router'
 import Home from '../components/HotelMenu.vue'
 import FoodCart from '../views/FoodCart.vue'
 import ContactInfo from '../views/ContactInfo.vue'
+import CustomerDetails from '../views/CustomerDetails.vue'
 
 Vue.use(VueRouter)
 
@@ -22,6 +23,11 @@ const routes = [
     path: '/contact-info',
     name: 'ContactInfo',
     component: ContactInfo,
+  },
+  {
+    path: '/customer-details',
+    name: 'CustomerDetails',
+    component: CustomerDetails,
   }
 ]
 

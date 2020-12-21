@@ -105,6 +105,7 @@ export default {
         item.quantity = quantity; 
         localStorage.setItem('foodItems', JSON.stringify(this.foodItems));
         
+        
         },
 
         cartItems: function(){
@@ -117,6 +118,7 @@ export default {
             return this.foodItems.reduce(function(total, item){
                 return total + item.quantity;
             },0);
+            
         },
         totalPrice: function(){
             return this.foodItems.reduce(function(total, item){

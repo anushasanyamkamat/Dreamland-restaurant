@@ -128,6 +128,9 @@
             checkout: function(){
                 this.$router.push('contact-info');
                 localStorage.setItem('totalPrice', JSON.stringify(this.totalPrice));
+                localStorage.setItem('quantity' ,JSON.stringify(this.foodCartItems.quantity));
+                localStorage.setItem('itemName' ,JSON.stringify(this.foodCartItems.title));
+
             },
         },
     }

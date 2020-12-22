@@ -26,6 +26,7 @@
                 </v-card>
             </v-col>
         </v-row> 
+        <h2 style="margin-left:25px">Order Summary</h2>
         <template v-for="(item, $index) in foodItems">
             <v-list-item  :key="$index" v-if="item.quantity>0">
                     <v-col>

@@ -4,7 +4,7 @@ import VueRouter from 'vue-router'
 import Home from '../components/HotelMenu.vue'
 import FoodCart from '../views/FoodCart.vue'
 import ContactInfo from '../views/ContactInfo.vue'
-import CustomerDetails from '../views/CustomerDetails.vue'
+import OrderSummary from '../views/OrderSummary.vue'
 
 Vue.use(VueRouter)
 
@@ -25,9 +25,9 @@ const routes = [
     component: ContactInfo,
   },
   {
-    path: '/customer-details',
-    name: 'CustomerDetails',
-    component: CustomerDetails,
+    path: '/order-summary',
+    name: 'OrderSummary',
+    component: OrderSummary,
   }
 ]
 

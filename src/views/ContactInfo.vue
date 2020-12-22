@@ -130,7 +130,7 @@ export default {
                 localStorage.setItem('name',this.name);
                 localStorage.setItem('address', this.address);
                 localStorage.setItem('phone', this.phone);
-                this.$router.push('/customer-details');
+                this.$router.push('/order-summary');
             }
             else {
                 alert("Your Cart is empty");

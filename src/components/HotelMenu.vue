@@ -20,8 +20,38 @@
                 </v-list-item-content>
             </v-list-item> 
         </template>  
- 
-        <v-container class="grey lighten-5">
+
+        <v-card fixed >
+            <hr>
+            <v-card-title self-align="center">
+            <v-row>
+                <v-col sm="8" cols="8">
+                    Total Price
+                </v-col>
+                <v-col sm="3" cols="4">
+                    Rs. {{ totalPrice }}/-
+                </v-col>
+            </v-row>
+            </v-card-title>
+            <v-card-title color="orange">
+            <v-row justify="end">
+                    <v-btn color="black"
+                            text
+                            rounded
+                            class="my-2"
+                            @click="cartItems">
+                           <strong> Place Your Order</strong>
+                        <v-icon
+                            large>
+                            mdi-chevron-right
+                        </v-icon>
+                    </v-btn>
+                
+            </v-row>
+            </v-card-title>
+        </v-card>
+  
+        <!-- <v-container class="grey lighten-5">
             <v-row no-gutters>
                 <v-col>
                     Total Price :-
@@ -33,12 +63,11 @@
 
         <v-footer
             color="orange"
-            padless
+            padless fixed
             >
             <v-row
                 justify="end"
-                no-gutters
-                
+                no-gutters     
             >
                 <v-btn
                 color="black"
@@ -55,7 +84,7 @@
                     mdi-chevron-right
                 </v-icon>
             </v-row>
-        </v-footer>
+        </v-footer> -->
     </v-list>
 </template>
 

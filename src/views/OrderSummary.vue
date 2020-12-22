@@ -44,35 +44,6 @@
                 <v-list-item-title>Customer Phone No.: {{phone}}</v-list-item-title>
                 </v-col>
         </v-list-item>
-    <!-- <div>
-        <v-btn
-            color="black"
-            text
-            rounded
-            class="my-2"
-            @click="contactForm">
-            Back To Contact Form
-            </v-btn>
-        <h1>Order Summary</h1>
-        <div>
-            <ul style="list-style-type:none;">
-                <li>Customer Name: {{name}} </li>
-                <li>Customer Address: {{address}} </li>
-                <li>Customer Phone No.: {{phone}} </li>
-               
-            </ul>
-        </div>
-        <div v-for="(item, $index) in foodItems" :key="$index">
-            <ul style="list-style-type:none;"  v-if="item.quantity>0">
-                <li>Item Name.: {{item.title}} || Quantity: {{item.quantity}} </li>
-            </ul>
-        </div>
-        <div>
-            <ul style="list-style-type:none;">
-                 <li>Total Price: {{price}} </li>
-            </ul>
-        </div>
-    </div> -->
     </v-list>
 </template>
 <script>
@@ -85,8 +56,6 @@ export default {
            address:'',
            phone: null,
            price: null,
-        //    itemName: '',
-        //    itemQuantity:null, 
            foodItems: null,
         }
     },
@@ -96,8 +65,6 @@ export default {
         this.phone = localStorage.getItem('phone');
         this.price = localStorage.getItem('totalPrice');
         this.foodItems = JSON.parse(localStorage.getItem('foodItems'));
-        // this.itemName = localStorage.getItem('itemName');
-        // this.itemQuantity = localStorage.getItem('quantity');
     },
     methods: {
         contactForm: function(){

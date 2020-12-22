@@ -1,5 +1,49 @@
 <template>
-    <div>
+    <v-list>
+        <v-row>
+            <v-col
+                cols="12"
+                sm="6"
+                offset-sm="3">
+                <v-card>
+                    <v-toolbar
+                        color="orange"
+                        dark>
+                            <v-icon
+                                large color="black">
+                                mdi-chevron-left
+                            </v-icon>
+                            <v-btn
+                                color="black"
+                                text
+                                rounded
+                                class="my-2"
+                                @click="contactForm">
+                                Back To Contact Form
+                            </v-btn>      
+                        
+                    </v-toolbar>
+                </v-card>
+            </v-col>
+        </v-row> 
+        <template v-for="(item, $index) in foodItems">
+            <v-list-item  :key="$index" v-if="item.quantity>0">
+                    <v-col>
+                    <v-list-item-title> Item Name: {{item.title}} || Qty: {{item.quantity}}
+                    </v-list-item-title>
+                    </v-col>
+            </v-list-item> 
+        </template>  
+        
+        <v-list-item>
+                <v-col>
+                <v-list-item-title>Total Price: Rs.{{price}}/- </v-list-item-title> <br>     
+                <v-list-item-title>Customer Name: {{name}} </v-list-item-title><br>
+                <v-list-item-title>Customer Address: {{address}} </v-list-item-title><br>
+                <v-list-item-title>Customer Phone No.: {{phone}}</v-list-item-title>
+                </v-col>
+        </v-list-item>
+    <!-- <div>
         <v-btn
             color="black"
             text
@@ -27,7 +71,8 @@
                  <li>Total Price: {{price}} </li>
             </ul>
         </div>
-    </div>
+    </div> -->
+    </v-list>
 </template>
 <script>
 

@@ -13,7 +13,6 @@
                                 large color="black">
                                 mdi-chevron-left
                             </v-icon>
-             
                             <v-btn
                                 color="black"
                                 text

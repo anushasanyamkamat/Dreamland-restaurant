@@ -33,58 +33,23 @@
                 </v-col>
             </v-row>
             </v-card-title>
-            <v-card-title color="orange">
-            <v-row justify="end">
-                    <v-btn color="black"
-                            text
-                            rounded
-                            class="my-2"
-                            @click="cartItems">
-                           <strong> Place Your Order</strong>
-                        <v-icon
-                            large>
-                            mdi-chevron-right
-                        </v-icon>
-                    </v-btn>
-                
-            </v-row>
+            <v-card-title>
+                <v-row justify="end" style="backgroung-color:orange">
+                        <v-btn color="black"
+                                text
+                                rounded
+                                class="my-2"
+                                @click="cartItems">
+                            <strong> Place Your Order</strong>
+                            <v-icon
+                                large>
+                                mdi-chevron-right
+                            </v-icon>
+                        </v-btn>
+                    
+                </v-row>
             </v-card-title>
         </v-card>
-  
-        <!-- <v-container class="grey lighten-5">
-            <v-row no-gutters>
-                <v-col>
-                    Total Price :-
-                </v-col>
-                <v-col> Rs.{{ totalPrice }}/-
-                </v-col>
-            </v-row>
-        </v-container>
-
-        <v-footer
-            color="orange"
-            padless fixed
-            >
-            <v-row
-                justify="end"
-                no-gutters     
-            >
-                <v-btn
-                color="black"
-                text
-                rounded
-                class="my-2"
-                @click="cartItems"
-                >
-                Place your Order
-            
-                </v-btn>
-                <v-icon
-                    large>
-                    mdi-chevron-right
-                </v-icon>
-            </v-row>
-        </v-footer> -->
     </v-list>
 </template>
 

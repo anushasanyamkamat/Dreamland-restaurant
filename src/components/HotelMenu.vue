@@ -1,12 +1,12 @@
 <template>
     <v-list three-line>
         <template v-for="(item, $index) in foodItems">
-            <v-list-item  :key="$index">
+            <v-list-item  :key="$index" >
                 <v-list-item-avatar>
                     <v-img :src="item.image">
                     </v-img>
                 </v-list-item-avatar>
-                <v-list-item-content>
+                <v-list-item-content class="overflow-y-auto">
                     <v-col>
                     <v-list-item-title v-text="item.title"></v-list-item-title>
                     </v-col>
@@ -21,10 +21,9 @@
             </v-list-item> 
         </template>  
 
-        <v-card fixed >
+        <v-bottom-navigation fixed>
             <hr>
-            <v-card-title self-align="center">
-            <v-row>
+            <v-row self-align="center">
                 <v-col sm="8" cols="8">
                     Total Price
                 </v-col>
@@ -32,24 +31,25 @@
                     Rs. {{ totalPrice }}/-
                 </v-col>
             </v-row>
-            </v-card-title>
-            <v-card-title>
-                <v-row justify="end" style="backgroung-color:orange">
-                        <v-btn color="black"
-                                text
-                                rounded
-                                class="my-2"
-                                @click="cartItems">
-                            <strong> Place Your Order</strong>
-                            <v-icon
-                                large>
-                                mdi-chevron-right
-                            </v-icon>
-                        </v-btn>
-                    
-                </v-row>
-            </v-card-title>
-        </v-card>
+           
+             <v-row justify="end">
+                <v-btn checkout-btn-row 
+                    color="black"
+                    text
+                    rounded
+                    xs="12"
+                    class="my-2"
+                    @click="cartItems">
+                    <strong> Place Your Order</strong>
+                        <v-icon
+                            large
+                            >
+                            mdi-chevron-right
+                        </v-icon>
+                </v-btn>   
+            </v-row>
+           
+        </v-bottom-navigation>
     </v-list>
 </template>
 
@@ -77,9 +77,21 @@ export default {
                     'quantity': 0, 
                     },
                     {
-                    'title': 'Prawns Biryani',
+                    'title': 'Chicken Biryani',
                     'description': 'Aromatic basmati rice tossed in some spices and prawns',
-                    'price': 170,   
+                    'price': 300,   
+                    'quantity': 0,
+                    },
+                    {
+                    'title': 'Mutton Biryani',
+                    'description': 'Aromatic basmati rice tossed in some spices and prawns',
+                    'price': 500,   
+                    'quantity': 0,
+                    },
+                    {
+                    'title': 'Fish Biryani',
+                    'description': 'Aromatic basmati rice tossed in some spices and prawns',
+                    'price': 400,   
                     'quantity': 0,
                     },
                 ],

@@ -1,5 +1,6 @@
 <template>
     <v-list three-line>
+        <v-img src="../assets/logo.png"></v-img>
         <template v-for="(item, $index) in foodItems">
             <v-list-item  :key="$index" >
                 <v-list-item-avatar>
@@ -21,7 +22,12 @@
             </v-list-item> 
         </template>  
 
-        <v-bottom-navigation fixed>
+        <v-app-bar
+        color="orange"
+        dark
+        
+        scroll-self
+        >
             <hr>
             <v-row self-align="center">
                 <v-col sm="8" cols="8">
@@ -49,7 +55,7 @@
                 </v-btn>   
             </v-row>
            
-        </v-bottom-navigation>
+        </v-app-bar>
     </v-list>
 </template>
 
@@ -92,6 +98,12 @@ export default {
                     'title': 'Fish Biryani',
                     'description': 'Aromatic basmati rice tossed in some spices and prawns',
                     'price': 400,   
+                    'quantity': 0,
+                    },
+                    {
+                    'title': 'Sea Food Biryani',
+                    'description': 'Aromatic basmati rice tossed in some spices and prawns',
+                    'price': 700,   
                     'quantity': 0,
                     },
                 ],

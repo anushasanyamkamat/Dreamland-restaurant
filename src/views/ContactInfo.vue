@@ -127,10 +127,16 @@ export default {
         },
         saveDetails: function(){
             if(this.totalPrice){
-                localStorage.setItem('name',this.name);
-                localStorage.setItem('address', this.address);
-                localStorage.setItem('phone', this.phone);
-                this.$router.push('/order-summary');
+                if(this.name && this.address && this.phone) {
+                    localStorage.setItem('name',this.name);
+                    localStorage.setItem('address', this.address);
+                    localStorage.setItem('phone', this.phone);
+                    this.$router.push('/order-summary');
+                }
+                else{
+                    alert("Please Enter full contact details");
+                }
+                
             }
             else {
                 alert("Your Cart is empty");

@@ -44,6 +44,19 @@
                 <v-list-item-title>Customer Phone No.: {{phone}}</v-list-item-title>
                 </v-col>
         </v-list-item>
+        <v-footer 
+            fixed
+            >
+            <v-container>
+                <v-row justify="end">
+                    <v-btn 
+                    color="green"
+                    @click="sendToWhatsapp">
+                        Send To WhatsApp
+                    </v-btn>
+                </v-row>
+            </v-container>
+        </v-footer>
     </v-list>
 </template>
 <script>
@@ -69,7 +82,21 @@ export default {
     methods: {
         contactForm: function(){
             this.$router.push('/contact-info');
-        }
+        },
+        sendToWhatsapp: function(){
+            let foodCartItems = this.foodItems.filter(item => item.quantity >0);
+            let result = foodCartItems.map(item => ({ name: item.title, quantity: item.quantity }));
+            let foodCartString = result.reduce((acc, item)=>{
+                return acc + "Item Name: " + item.name + " || " + "Qty: " + item.quantity + "\n" 
+            }, '');
+           
+            let orderDetails = "Name: " + this.name + "\n" + 
+                        "Address: " + this.address + '\n' + 
+                        "Mobile No: " + this.phone + '\n' + 
+                        foodCartString + "\n";      
+            console.log(orderDetails);      
+         
+        },
     },
 }
 </script>

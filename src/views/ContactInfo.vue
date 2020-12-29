@@ -132,6 +132,7 @@ export default {
                     localStorage.setItem('address', this.address);
                     localStorage.setItem('phone', this.phone);
                     this.$router.push('/order-summary');
+                    
                 }
                 else{
                     alert("Please Enter full contact details");

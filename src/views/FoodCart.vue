@@ -53,10 +53,10 @@
                 <v-container>
                      <hr>
                     <v-row>
-                        <v-col align-self="center">
+                        <v-col align-self="center" color="black">
                             Total Price :-
                         </v-col>
-                        <v-col justify="end"> Rs.{{ totalPrice }}/-
+                        <v-col justify="end" color = "black"> Rs.{{ totalPrice }}/-
                         </v-col>
                     </v-row>
                 </v-container>

@@ -87,14 +87,18 @@ export default {
             let foodCartItems = this.foodItems.filter(item => item.quantity >0);
             let result = foodCartItems.map(item => ({ name: item.title, quantity: item.quantity }));
             let foodCartString = result.reduce((acc, item)=>{
-                return acc + "Item Name: " + item.name + " || " + "Qty: " + item.quantity + "\n" 
+                return acc + "Item Name: " + item.name + " || " + "Qty: " + item.quantity + "%0a" 
             }, '');
            
-            let orderDetails = "Name: " + this.name + "\n" + 
-                        "Address: " + this.address + '\n' + 
-                        "Mobile No: " + this.phone + '\n' + 
-                        foodCartString + "\n";      
-            console.log(orderDetails);      
+            let orderDetails = "Name: " + this.name + "%0a" + 
+                        "Address: " + this.address + '%0a' + 
+                        "Mobile No: " + this.phone + '%0a' + 
+                        foodCartString + 
+                        "Total Price: Rs." + this.price + "/-" + '%0a';      
+            // console.log(orderDetails);
+            let url = "https://api.whatsapp.com/send?phone=+918087667239&text=" +orderDetails; 
+            location.replace(url);
+
          
         },
     },

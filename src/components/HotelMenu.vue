@@ -22,40 +22,37 @@
             </v-list-item> 
         </template>  
 
-        <v-app-bar
-        color="orange"
-        dark
-        
-        scroll-self
-        >
+      <v-footer 
+            padless
+            fixed
+            color="orange"
+            >
             <hr>
-            <v-row self-align="center">
-                <v-col sm="8" cols="8">
-                    Total Price
-                </v-col>
-                <v-col sm="3" cols="4">
-                    Rs. {{ totalPrice }}/-
-                </v-col>
-            </v-row>
-           
-             <v-row justify="end">
-                <v-btn checkout-btn-row 
-                    color="black"
-                    text
-                    rounded
-                    xs="12"
-                    class="my-2"
-                    @click="cartItems">
-                    <strong> Place Your Order</strong>
+                <v-row>
+                    <v-col align-self="center" color="black">
+                         Total Price :-
+                    </v-col>
+                    <v-col justify="end" color = "black"> Rs.{{ totalPrice }}/-
+                    </v-col>
+                </v-row>
+                <v-row
+                    justify="end"
+                    no-gutters 
+                    >
+                    <v-btn
+                        color="black"
+                        text
+                        rounded
+                        class="my-2"
+                        @click="cartItems">
+                        Proceed to Food Cart
                         <v-icon
-                            large
-                            >
+                            large color="black">
                             mdi-chevron-right
-                        </v-icon>
-                </v-btn>   
-            </v-row>
-           
-        </v-app-bar>
+                         </v-icon>
+                    </v-btn>
+                </v-row>
+        </v-footer>
     </v-list>
 </template>
 

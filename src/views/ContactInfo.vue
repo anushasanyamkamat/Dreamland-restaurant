@@ -57,6 +57,7 @@
                         label="Mobile No."
                         prefix="+91"
                         hide-details="auto"
+                        type="number"
                         :rules="phoneRules"
                         v-model="phone">
                     </v-text-field>

@@ -49,22 +49,20 @@
         <v-footer 
             padless
             fixed
+            color="orange"
             >
-                <v-container>
-                     <hr>
-                    <v-row>
-                        <v-col align-self="center" color="black">
-                            Total Price :-
-                        </v-col>
-                        <v-col justify="end" color = "black"> Rs.{{ totalPrice }}/-
-                        </v-col>
-                    </v-row>
-                </v-container>
-                
+            <hr>
+                <v-row>
+                    <v-col align-self="center" color="black">
+                         Total Price :-
+                    </v-col>
+                    <v-col justify="end" color = "black"> Rs.{{ totalPrice }}/-
+                    </v-col>
+                </v-row>
                 <v-row
-                justify="end"
-                no-gutters 
-                color="orange">
+                    justify="end"
+                    no-gutters 
+                    >
                     <v-btn
                         color="black"
                         text
@@ -72,13 +70,12 @@
                         class="my-2"
                         @click="checkout">
                         Proceed to checkout
+                        <v-icon
+                            large color="black">
+                            mdi-chevron-right
+                         </v-icon>
                     </v-btn>
-                    <v-icon
-                        large color="black">
-                        mdi-chevron-right
-                    </v-icon>
                 </v-row>
-            
         </v-footer>
     </v-list>
 </template>

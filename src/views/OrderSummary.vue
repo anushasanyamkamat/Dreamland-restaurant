@@ -90,9 +90,9 @@ export default {
                 return acc + "Item Name: " + item.name + " || " + "Qty: " + item.quantity + "%0a" 
             }, '');
            
-            let orderDetails = "Dear Kamat's Dreamland, I would like to place an order for :-" + "%0a" +
+            let orderDetails = "Dear Kamat's Dreamland, I would like to place an order for :-" + "%0a" + "%0a" +
                         foodCartString + 
-                        "Total Price: Rs." + this.price + "/-" + '%0a' +
+                        "Total Price: Rs." + this.price + "/-" + '%0a' + "%0a" +
                         "Name: " + this.name + "%0a" + 
                         "Address: " + this.address + '%0a' + 
                         "Mobile No: " + this.phone + '%0a';      

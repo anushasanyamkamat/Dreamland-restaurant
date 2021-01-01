@@ -128,7 +128,7 @@ export default {
         },
         saveDetails: function(){
             if(this.totalPrice){
-                if(this.name && this.address && this.phone) {
+                if(this.name && this.address && this.phone && this.phone.length === 10) {
                     localStorage.setItem('name',this.name);
                     localStorage.setItem('address', this.address);
                     localStorage.setItem('phone', this.phone);

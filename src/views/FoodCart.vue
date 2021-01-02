@@ -1,5 +1,5 @@
 <template>
-   <v-list three-line>
+   <v-list three-line class="pb-18">
        <v-row>
             <v-col
                 cols="12"
@@ -135,5 +135,8 @@
 <style>
 a {
     text-decoration: none;
+}
+.pb-18 {
+  padding-bottom: 72px;
 }
 </style>

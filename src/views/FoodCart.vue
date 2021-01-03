@@ -10,16 +10,16 @@
             <v-toolbar
                 color="orange"
                 dark>
-              <v-icon
-                  large color="black">
-                mdi-chevron-left
-              </v-icon>
               <v-btn
                   color="black"
                   text
                   rounded
                   class="my-2"
                   @click="backToMenu">
+                <v-icon
+                    large color="black">
+                  mdi-chevron-left
+                </v-icon>
                 Back To Menu
               </v-btn>
 

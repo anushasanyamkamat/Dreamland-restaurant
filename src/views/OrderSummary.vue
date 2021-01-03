@@ -52,15 +52,14 @@
     <v-footer
         fixed
     >
-      <v-container>
-        <v-row justify="end">
-          <v-btn
-              color="green"
-              @click="sendToWhatsapp">
-            Send To WhatsApp
-          </v-btn>
-        </v-row>
-      </v-container>
+      <v-row justify="end">
+        <v-btn
+
+            @click="sendToWhatsapp">
+          <v-img class="whatsapp" src="../assets/whatsapp.png"></v-img>
+          Send To WhatsApp
+        </v-btn>
+      </v-row>
     </v-footer>
 
   </div>
@@ -112,7 +111,14 @@ export default {
 }
 </script>
 <style>
-.pb-18{
+.pb-18 {
   padding-bottom: 72px;
 }
+
+.whatsapp {
+  width: 30px;
+  height: 30px;
+  margin-right: 15px;
+}
+
 </style>

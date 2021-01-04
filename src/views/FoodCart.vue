@@ -9,7 +9,7 @@
           <v-card>
             <v-toolbar
                 color="orange"
-                dark>
+                >
               <v-btn
                   color="black"
                   text
@@ -20,7 +20,7 @@
                     large color="black">
                   mdi-chevron-left
                 </v-icon>
-                Back To Menu
+                Back To Main Menu
               </v-btn>
 
             </v-toolbar>

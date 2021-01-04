@@ -1,7 +1,29 @@
 <template>
   <div>
+    <v-img class="banner-img" src="../assets/logo.png"></v-img>
+    <v-app-bar>
+      <v-tabs>
+        <ul>
+          <li>
+            <a href="">Favorite Dishes</a>
+          </li>
+          <li>
+            <a href="">Starters</a>
+          </li>
+          <li>
+            <a href="">Main Course</a>
+          </li>
+          <li>
+            <a href="">Deserts</a>
+          </li>
+          <li>
+            <a href="">Drinks</a>
+          </li>
+        </ul>
+
+      </v-tabs>
+    </v-app-bar>
     <v-list three-line class="pb-18">
-      <v-img src="../assets/logo.png"></v-img>
       <template v-for="(item, $index) in foodItems">
         <v-list-item :key="$index">
           <v-list-item-avatar>
@@ -133,8 +155,13 @@ export default {
     },
 
     cartItems: function() {
-      console.log(this.foodItems);
-      this.$router.push('/food-cart');
+      if (this.totalPrice){
+        this.$router.push('/food-cart');
+      }
+      else {
+        alert("Please select food items");
+      }
+
     },
   },
   computed: {
@@ -159,4 +186,29 @@ export default {
   padding-bottom: 72px;
 }
 
+.banner-img {
+  height: 20%;
+}
+
+ul {
+  list-style-type: none;
+  margin-left: 450px;
+  padding: 0;
+  overflow: hidden;
+  background-color: whitesmoke;
+
+}
+
+li {
+  float: left;
+
+}
+
+li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+}
 </style>

@@ -94,6 +94,9 @@ export default {
   data: function() {
     return {
       foodCartItems: null,
+      name: "",
+      address: "",
+      phoneNo: null,
     }
   },
   created() {
@@ -128,8 +131,6 @@ export default {
     checkout: function() {
       this.$router.push('contact-info');
       localStorage.setItem('totalPrice', JSON.stringify(this.totalPrice));
-
-
     },
   },
 }

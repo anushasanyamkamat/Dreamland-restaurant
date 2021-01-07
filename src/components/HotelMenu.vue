@@ -18,8 +18,8 @@
                   <v-icon>mdi-magnify</v-icon>
                 </v-btn>
               </v-tab>
-              <v-tab><a href="#favorite">Favorite Dishes</a></v-tab>
-              <v-tab><a href="#starters">Starters</a></v-tab>
+              <v-tab><a id="favorite-tab" href="#favorite">Favorite Dishes</a></v-tab>
+              <v-tab><a id="starter-tab" href="#starters">Starters</a></v-tab>
               <v-tab>Main Course</v-tab>
               <v-tab>Desert</v-tab>
               <v-tab>Drinks</v-tab>
@@ -249,5 +249,6 @@ export default {
   border: solid;
   border-color: orange;
 }
+
 
 </style>

@@ -1,32 +1,22 @@
 <template>
   <div>
     <v-list class="pb-18">
-      <v-row>
-        <v-col
-            cols="12"
-            sm="6"
-            offset-sm="3">
-          <v-card>
-            <v-toolbar
-                color="orange"
-                dark>
-              <v-icon
-                  large color="black">
-                mdi-chevron-left
-              </v-icon>
-              <v-btn
-                  color="black"
-                  text
-                  rounded
-                  class="my-2"
-                  @click="contactForm">
-                Back To Contact Form
-              </v-btn>
-
-            </v-toolbar>
-          </v-card>
-        </v-col>
-      </v-row>
+      <v-toolbar
+          color="orange"
+          dark>
+        <v-icon
+            large color="black">
+          mdi-chevron-left
+        </v-icon>
+        <v-btn
+            color="black"
+            text
+            rounded
+            class="my-2"
+            @click="contactForm">
+          Back To Contact Form
+        </v-btn>
+      </v-toolbar>
       <h2 style="margin-left:25px">Order Summary</h2>
       <template v-for="(item, $index) in foodItems">
         <v-list-item :key="$index" v-if="item.quantity>0">

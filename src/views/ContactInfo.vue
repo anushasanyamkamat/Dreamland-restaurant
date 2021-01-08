@@ -1,33 +1,24 @@
 <template>
   <div>
-    <v-row>
-      <v-col
-          cols="12"
-          sm="6"
-          offset-sm="3">
-        <v-card>
-          <v-toolbar
-              color="orange"
-              dark>
-            <v-btn
-                justify="start"
-                color="black"
-                text
-                rounded
-                class="my-2"
-                @click="backToCart">
-              <v-icon
-                  large color="black">
-                mdi-chevron-left
+    <v-toolbar
+        color="orange"
+        dark
+        width="100%">
+      <v-btn
+          justify="start"
+          color="black"
+          text
+          rounded
+          class="my-2"
+          @click="backToCart">
+        <v-icon
+            large color="black">
+          mdi-chevron-left
 
-              </v-icon>
-              Back To Cart
-            </v-btn>
-
-          </v-toolbar>
-        </v-card>
-      </v-col>
-    </v-row>
+        </v-icon>
+        Back To Cart
+      </v-btn>
+    </v-toolbar>
     <v-container>
       <v-row>
         <v-col>
@@ -35,7 +26,8 @@
               label="Full Name"
               hide-details="auto"
               :rules="nameRules"
-              v-model="name">
+              v-model="name"
+              @keyup.enter="saveDetails">
           </v-text-field>
         </v-col>
       </v-row>
@@ -47,7 +39,8 @@
               hide-details="auto"
               :rules="addressRules"
               required
-              v-model="address">
+              v-model="address"
+              @keyup.native.enter="saveDetails">
           </v-textarea>
         </v-col>
       </v-row>
@@ -59,7 +52,8 @@
               hide-details="auto"
               type="number"
               :rules="phoneRules"
-              v-model="phone">
+              v-model="phone"
+              @keyup.enter="saveDetails">
           </v-text-field>
         </v-col>
       </v-row>
@@ -143,6 +137,7 @@ export default {
       }
 
     },
+
   },
 
 }

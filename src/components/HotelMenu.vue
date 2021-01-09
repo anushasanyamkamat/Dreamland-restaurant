@@ -176,6 +176,12 @@ export default {
           'price': 200,
           'quantity': 0,
         },
+        {
+          'title': 'Mushroom Chilly',
+          'description': 'Aromatic basmati rice tossed in some spices and prawns',
+          'price': 150,
+          'quantity': 0,
+        },
       ],
 
 

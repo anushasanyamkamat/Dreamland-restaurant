@@ -6,36 +6,30 @@
       </template>
     </div>
     <div>
-      <template>
-        <v-app-bar
-            color="orange"
-            dark
-        >
-          <template>
-            <v-tabs>
-              <v-tab>
-                <v-btn icon>
-                  <v-icon>mdi-magnify</v-icon>
-                </v-btn>
-              </v-tab>
-              <v-tab><a id="favorite-tab" href="#favorite">Favorite Dishes</a></v-tab>
-              <v-tab><a id="starter-tab" href="#starters">Starters</a></v-tab>
-              <v-tab>Main Course</v-tab>
-              <v-tab>Desert</v-tab>
-              <v-tab>Drinks</v-tab>
-            </v-tabs>
-          </template>
-        </v-app-bar>
-      </template>
+          <scrollactive>
+          <v-app-bar
+              color="orange"
+              dark
+          >
+            <template>
+              <v-tabs>
+                <v-tab>
+                  <v-btn icon>
+                    <v-icon>mdi-magnify</v-icon>
+                  </v-btn>
+                </v-tab>
+                <v-tab><a href="#favorite" class="scrollactive-item">Favorite Dishes</a></v-tab>
+                <v-tab><a href="#starters" class="scrollactive-item">Starters</a></v-tab>
+                <v-tab>Main Course</v-tab>
+                <v-tab>Desert</v-tab>
+                <v-tab>Drinks</v-tab>
+              </v-tabs>
+            </template>
+          </v-app-bar>
+      </scrollactive>
     </div>
-    <hr>
-    <hr>
     <div>
-      <v-sheet
-          id="scrolling-techniques-4"
-          class="overflow-y-auto"
-          max-height="600"
-      >
+      <v-sheet>
         <v-container style="height: 1000px;">
           <h2 id="favorite">Favorite Dishes</h2>
           <v-list three-line class="pb-18">
